@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="json\json_reader.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_value.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_writer.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="Reflection.cpp">
+      <Filter>AboutNet\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseMsg.cpp">
+      <Filter>AboutNet\Msg</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgCreateTurret.cpp">
+      <Filter>AboutNet\Msg</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgTurretInfo.cpp">
+      <Filter>AboutNet\Msg</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomManager.cpp">
+      <Filter>AboutNet\Room</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>AboutNet\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerManager.cpp">
+      <Filter>AboutNet\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="NetManager.cpp">
+      <Filter>AboutNet\NetManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Acceptor.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="Channel.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="DaemonRun.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="EpollPoller.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="EventLoop.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="Global.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="IMServer.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="Lobby.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="MyThreadPool.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomSession.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpClient.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpConnection.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpServer.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpSession.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerId.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerQueue.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="Timestamp.cpp">
+      <Filter>NetFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientState.cpp">
+      <Filter>AboutNet\ClientState</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHandler.cpp">
+      <Filter>AboutNet\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleMsgHandler.cpp">
+      <Filter>AboutNet\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="SysMsgHandler.cpp">
+      <Filter>AboutNet\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgPing.cpp">
+      <Filter>AboutNet\Msg</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="json\features.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\forwards.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json_batchallocator.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\value.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\writer.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\autolink.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\config.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\reader.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Reflection.h">
+      <Filter>AboutNet\Reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseMsg.h">
+      <Filter>AboutNet\Msg</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgCreateTurret.h">
+      <Filter>AboutNet\Msg</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgTurretInfo.h">
+      <Filter>AboutNet\Msg</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomManager.h">
+      <Filter>AboutNet\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>AboutNet\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerManager.h">
+      <Filter>AboutNet\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="NetManager.h">
+      <Filter>AboutNet\NetManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Acceptor.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Callbacks.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Channel.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="DaemonRun.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="EpollPoller.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="EventLoop.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="IMServer.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Lobby.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="MyThreadPool.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomSession.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Sockets.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpClient.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpConnection.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpServer.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpSession.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerId.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerQueue.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Timestamp.h">
+      <Filter>NetFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientState.h">
+      <Filter>AboutNet\ClientState</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandler.h">
+      <Filter>AboutNet\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleMsgHandler.h">
+      <Filter>AboutNet\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="SysMsgHandler.h">
+      <Filter>AboutNet\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgPing.h">
+      <Filter>AboutNet\Msg</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="json\json_internalarray.inl">
+      <Filter>Json</Filter>
+    </None>
+    <None Include="json\json_internalmap.inl">
+      <Filter>Json</Filter>
+    </None>
+    <None Include="json\json_valueiterator.inl">
+      <Filter>Json</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Json">
+      <UniqueIdentifier>{7e0deb47-d378-40bc-a890-d9061cf8c7c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AboutNet">
+      <UniqueIdentifier>{e7ec7f5a-ddfe-41ce-aaa1-531235da1c15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AboutNet\Reflection">
+      <UniqueIdentifier>{b952250a-bdc9-46e6-ba0c-3cd152a250a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AboutNet\Msg">
+      <UniqueIdentifier>{1352e0f0-fb63-4b4a-b963-30ce4ee0ee87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AboutNet\Room">
+      <UniqueIdentifier>{6c80c49d-da4e-4d03-aa6b-2e4df148f657}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AboutNet\Player">
+      <UniqueIdentifier>{ed05095e-46c0-4746-9b4d-b2226df61158}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AboutNet\NetManager">
+      <UniqueIdentifier>{3691c393-a28b-4d6f-b58a-274c7968e205}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetFrame">
+      <UniqueIdentifier>{cf4fe825-a75a-4c42-bda9-068830d13e0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{869fb2ba-b99c-44d9-aad8-500c010dedd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AboutNet\ClientState">
+      <UniqueIdentifier>{8604efad-9231-486b-924f-5a6e804cf563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AboutNet\Logic">
+      <UniqueIdentifier>{8d1fa87d-2985-419e-8633-63332efb7872}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

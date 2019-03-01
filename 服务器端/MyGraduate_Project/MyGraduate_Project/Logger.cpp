@@ -4,7 +4,7 @@
 #include <memory>
 #include <stdarg.h>
 #pragma warning (disable:4996)
-//#define YDEBUG	//TODO 如果没有定义宏则采用日志的全文方式显示到屏幕  否则只显示主要内容
+//#define YDEBUG	//YODO 如果没有定义宏则采用日志的全文方式显示到屏幕  否则只显示主要内容
 
 Logger& Logger::GetInstance()
 {
@@ -66,7 +66,7 @@ void Logger::AddToQueue(const char* pszLevel,
 	vsnprintf(msg, 256, pszFmt, vArgList);
 	va_end(vArgList);
 #ifndef YDEBUG
-	printf("%s\n", msg);		//TODO 测试 正式版注释掉
+	printf("%s\n", msg);		//YODO 测试 正式版注释掉
 #endif // YDEBUG
 	time_t now = time(NULL);
 	struct tm* tmstr = localtime(&now);

@@ -14,7 +14,7 @@ public:
 	void Init();
 	MsgTurretInfo();
 	virtual ~MsgTurretInfo();
-	char* EnCode();
+	char* EnCode(int &dataLen);
 	BaseMsg* DeCode(Json::Value);
 };
 #endif // !__MSG_TURRET_INFO_H__

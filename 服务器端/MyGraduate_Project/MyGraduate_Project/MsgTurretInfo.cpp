@@ -19,7 +19,7 @@ MsgTurretInfo::~MsgTurretInfo()
 
 }
 
-char * MsgTurretInfo::EnCode()
+char * MsgTurretInfo::EnCode(int &dataLen)
 {
 	SET_VALUE(_protoName);
 	SET_VALUE(_turretName);

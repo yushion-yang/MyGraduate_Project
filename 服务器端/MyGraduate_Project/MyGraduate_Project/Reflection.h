@@ -1,17 +1,19 @@
 #ifndef __REFLECTION_H__
 #define __REFLECTION_H__
 
-#define REGIST_FUN(fun) Reflection::GetInstance().RegistFun(#fun,fun)
-#define INVOKE_FUN(fun,arg1,arg2) Reflection::GetInstance().InvokFun(fun,arg1,arg2)
+#define REGISTE_FUN(className,funName) Reflection::GetInstance().RegistFun(#funName, std::bind(\
+	&className::funName, this, std::placeholders::_1, std::placeholders::_2));
+#define INVOKE_FUN(funName,arg1,arg2) Reflection::GetInstance().InvokFun(funName,arg1,arg2)
 
 #include <functional>
 #include <map>
 #include <cstring>
-
+class ClientState;
+class BaseMsg;
 class Reflection
 {
-	using Type1 = int;
-	using Type2 = int;
+	using Type1 = ClientState* ;
+	using Type2 = BaseMsg* ;
 	using FunCall = std::function<void(Type1, Type2)>;
 	using FunReflections = std::map<std::string, FunCall>;
 public:

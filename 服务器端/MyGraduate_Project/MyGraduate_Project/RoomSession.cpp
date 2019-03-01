@@ -23,7 +23,7 @@ Player* RoomSession::AddPlayer(TcpConnection * conn)
 	{
 		return nullptr;
 	}
-	player_[player_count_++].SetTcpConnection(conn);
+	//player_[player_count_++].SetTcpConnection(conn);
 	return &player_[player_count_ - 1];
 }
 

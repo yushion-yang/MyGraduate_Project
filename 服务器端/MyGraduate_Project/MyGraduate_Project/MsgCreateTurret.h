@@ -13,7 +13,7 @@ public:
 public:
 	MsgCreateTurret();
 	virtual ~MsgCreateTurret();
-	char* EnCode();
+	char* EnCode(int &dataLen);
 	BaseMsg* DeCode(Json::Value value);
 	void PrintData();
 };

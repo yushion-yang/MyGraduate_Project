@@ -53,6 +53,7 @@ public:
 	}
 
 	EpollPoller* GetEpollPoller() { return poller_.get(); }
+	void SetFrameFunctor(Functor functor) { frameFunctor_ = functor; }
 private:
 	void abortNotInLoopThread();
 	void handleRead();  // waked up

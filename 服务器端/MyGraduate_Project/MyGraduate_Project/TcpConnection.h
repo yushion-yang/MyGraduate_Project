@@ -10,9 +10,6 @@
 #include <atomic>
 #include <string>
 
-class Player;
-class RoomSession;
-
 //断开连接 连接中 已连接 断开连接中
 enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };
 
@@ -24,7 +21,6 @@ public:
 	TcpConnection(int socket,EventLoop* loop);
 	~TcpConnection();
 
-	void SetPlayer(RoomSession* room);
 	void SolveRead();
 	void SolveSend(char *datas,int len);
 	void SolveClose();
@@ -57,7 +53,6 @@ public:
 	EventLoop* loop_;
 	Buffer input_buffer_;
 	Buffer output_buffer_;
-	Player* player_;
 	std::atomic<StateE> state_;
 	MessageCallback messageCallback_;
 	ConnectionCallback connectionCallback_;

@@ -3,9 +3,8 @@
 #include <string.h>
 #include <unistd.h>
 #include <assert.h>
-#define CHARP_TO_INTP(x) ((int*)(x))
-#define CHARP_TO_INTP_IDX0(x) CHARP_TO_INTP(x)[0]
-const int HEAD_LEN = 4;
+#define GET_INT16(x) (((int16_t*)(x))[0])
+const int HEAD_LEN = 2;
 
 //应用层协议：包长度+内容 包长度为个数据包的长度 不是仅为内容长度
 Buffer::Buffer()
@@ -18,30 +17,30 @@ Buffer::~Buffer()
 
 }
 
-bool Buffer::EnoughOnePackageLen()
+bool Buffer::RsEnoughOnePackageLen()
 {
 	return all_data_len_ - current_index_ >=  solve_data_len_;
 }
 
-bool Buffer::EnoughHeadLen()
+bool Buffer::RsEnoughHeadLen()
 {
-	return all_data_len_-current_index_>= HEAD_LEN;
+	return all_data_len_ - current_index_ >= HEAD_LEN;
 }
 
 void Buffer::SetSolveDataLen()
 {
-	solve_data_len_ = CHARP_TO_INTP_IDX0(datas_ + current_index_);
+	solve_data_len_ = GET_INT16(datas_ + current_index_) + HEAD_LEN;
 }
 
 int Buffer::GetPackageLen()
 {
-	assert(EnoughOnePackageLen());
+	assert(RsEnoughOnePackageLen());
 	return solve_data_len_;
 }
 
-int Buffer::GetDataLen()
+int Buffer::GetValidDataLen()
 {
-	return all_data_len_;
+	return all_data_len_ - current_index_;
 }
 
 void Buffer::SolveLen()
@@ -104,7 +103,7 @@ void Buffer::AppendData(char * datas, int len)
 
 bool Buffer::HasData()
 {
-	return current_index_!=all_data_len_;
+	return current_index_ != all_data_len_;
 }
 
 void Buffer::MoveCurrentIndex(int index)

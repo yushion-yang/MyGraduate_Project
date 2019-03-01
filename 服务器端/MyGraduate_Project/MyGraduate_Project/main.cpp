@@ -44,11 +44,10 @@ int main(int argc, char* argv[])
 
 	Logger::GetInstance().SetFileName("log.txt");
 	Logger::GetInstance().Start();
-	//TODO 主循环 设置每帧执行的任务为检测连接心跳是否到期 
-	//任务由业务逻辑层来完成 可以使用静态类NetManager  此类包括处理心跳时间方法
-	EventLoop main_loop;		
 
-	Singleton<NetManager>::Instance();
+	EventLoop main_loop;
+	main_loop.SetFrameFunctor(std::bind(&NetManager::CheckPing, Singleton<NetManager>::Instance()));
+	Singleton<NetManager>::Instance().RegisterFun();
 
 	Singleton<MyThreadPool>::Instance().Init(&main_loop,THREAD_NUM);
 	Singleton<MyThreadPool>::Instance().Start();

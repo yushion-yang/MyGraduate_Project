@@ -77,10 +77,13 @@
   <ItemGroup>
     <ClCompile Include="Acceptor.cpp" />
     <ClCompile Include="BaseMsg.cpp" />
+    <ClCompile Include="BattleMsgHandler.cpp" />
     <ClCompile Include="Buffer.cpp" />
     <ClCompile Include="Channel.cpp" />
+    <ClCompile Include="ClientState.cpp" />
     <ClCompile Include="DaemonRun.cpp" />
     <ClCompile Include="EpollPoller.cpp" />
+    <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="EventLoop.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="IMServer.cpp" />
@@ -91,6 +94,7 @@
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MsgCreateTurret.cpp" />
+    <ClCompile Include="MsgPing.cpp" />
     <ClCompile Include="MsgTurretInfo.cpp" />
     <ClCompile Include="MyThreadPool.cpp" />
     <ClCompile Include="NetManager.cpp" />
@@ -99,6 +103,7 @@
     <ClCompile Include="Reflection.cpp" />
     <ClCompile Include="RoomManager.cpp" />
     <ClCompile Include="RoomSession.cpp" />
+    <ClCompile Include="SysMsgHandler.cpp" />
     <ClCompile Include="TcpClient.cpp" />
     <ClCompile Include="TcpConnection.cpp" />
     <ClCompile Include="TcpServer.cpp" />
@@ -111,11 +116,14 @@
   <ItemGroup>
     <ClInclude Include="Acceptor.h" />
     <ClInclude Include="BaseMsg.h" />
+    <ClInclude Include="BattleMsgHandler.h" />
     <ClInclude Include="Buffer.h" />
     <ClInclude Include="Callbacks.h" />
     <ClInclude Include="Channel.h" />
+    <ClInclude Include="ClientState.h" />
     <ClInclude Include="DaemonRun.h" />
     <ClInclude Include="EpollPoller.h" />
+    <ClInclude Include="EventHandler.h" />
     <ClInclude Include="EventLoop.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="IMServer.h" />
@@ -131,6 +139,7 @@
     <ClInclude Include="Lobby.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="MsgCreateTurret.h" />
+    <ClInclude Include="MsgPing.h" />
     <ClInclude Include="MsgTurretInfo.h" />
     <ClInclude Include="MyThreadPool.h" />
     <ClInclude Include="NetManager.h" />
@@ -141,6 +150,7 @@
     <ClInclude Include="RoomSession.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Sockets.h" />
+    <ClInclude Include="SysMsgHandler.h" />
     <ClInclude Include="TcpClient.h" />
     <ClInclude Include="TcpConnection.h" />
     <ClInclude Include="TcpServer.h" />

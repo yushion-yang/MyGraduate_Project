@@ -1,6 +1,7 @@
 #include "BaseMsg.h"
 #include "MsgCreateTurret.h"
 #include "MsgTurretInfo.h"
+#include "MsgPing.h"
 
 #define RETURN_MSG(x) 	if (strcmp(protoName,#x)== 0)\
 	{\
@@ -28,7 +29,7 @@ void BaseMsg::Init()
 
 }
 
-char * BaseMsg::EnCode()
+char * BaseMsg::EnCode(int &dataLen)
 {
 	return nullptr;
 }
@@ -57,5 +58,6 @@ BaseMsg * BaseMsg::GetMsg(const char * protoName)
 {
 	RETURN_MSG(MsgCreateTurret);
 	RETURN_MSG(MsgTurretInfo);
+	RETURN_MSG(MsgPing);
 	return nullptr;
 }

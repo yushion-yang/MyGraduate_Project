@@ -11,7 +11,7 @@ MsgCreateTurret::~MsgCreateTurret()
 
 }
 
-char * MsgCreateTurret::EnCode()
+char * MsgCreateTurret::EnCode(int &dataLen)
 {
 	SET_VALUE(_protoName);
 	SET_VALUE(_x);

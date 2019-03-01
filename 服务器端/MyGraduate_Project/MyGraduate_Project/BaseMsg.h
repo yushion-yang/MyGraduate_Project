@@ -13,6 +13,7 @@
 	std::string strWrite = writer.write(root);\
 	char *datas = new char[strWrite.length()];\
 	strcpy(datas, strWrite.c_str());\
+	dataLen = strWrite.length();\
 	return datas;
 
 class BaseMsg
@@ -25,7 +26,7 @@ public:
 	virtual void PrintData();
 	virtual void Init();
 
-	virtual char* EnCode();
+	virtual char* EnCode(int &dataLen);
 	virtual BaseMsg* DeCode(Json::Value);
 
 	static BaseMsg* DeCode(char* datas);

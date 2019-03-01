@@ -46,8 +46,6 @@ void TcpServer::newConnection(int socket)
 {
 	EventLoop* ioLoop = Singleton<MyThreadPool>::Instance().GetNextLoop();
 	TcpConnectionPtr new_connection(new TcpConnection(socket,ioLoop));
-	//TODO	移除player和connection的直接连接关系
-	new_connection->SetPlayer(lobby_.GetRoomSession());
 
 	tcp_connections_.push_back(new_connection);
 	new_connection->setConnectionCallback(connectionCallback_);	//IMServer::OnConnection

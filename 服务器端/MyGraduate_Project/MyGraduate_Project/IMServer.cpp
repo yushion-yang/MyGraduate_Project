@@ -1,5 +1,7 @@
 #include "IMServer.h"
 #include "Logger.h"
+#include "Singleton.h"
+#include "NetManager.h"
 ///掌管所有的RoomSession
 
 bool IMServer::Init(EventLoop * loop)
@@ -60,14 +62,17 @@ void IMServer::OnConnection(std::shared_ptr<TcpConnection> conn)
 	{
 		//LOG_INFO << "client connected:" << conn->peerAddress().toIpPort();
 		LogInfo("create a new connection session");
-		//TODO 修改为不保存Session集合 增设一个单例NetManager类 里面包括了ClientState集合 以及心跳事件检测
+		//修改为不保存Session集合 增设一个单例NetManager类 里面包括了ClientState集合 以及心跳事件检测
 		//此类作为数据处理类 将TcpConnection的信息处理回调设置为NetManager类的对应函数
-		++m_sessionId;
-		std::shared_ptr<RoomSession> spSession(new RoomSession(conn, m_sessionId)); 
-		conn->setMessageCallback(std::bind(&RoomSession::OnRead, spSession.get(), std::placeholders::_1, std::placeholders::_2));
+		//++m_sessionId;
+		//std::shared_ptr<RoomSession> spSession(new RoomSession(conn, m_sessionId)); 
+		//conn->setMessageCallback(std::bind(&RoomSession::OnRead, spSession.get(), std::placeholders::_1, std::placeholders::_2));
+		//std::lock_guard<std::mutex> guard(m_sessionMutex);
+		//m_sessions.push_back(spSession);
 
-		std::lock_guard<std::mutex> guard(m_sessionMutex);
-		m_sessions.push_back(spSession);
+		Singleton<NetManager>::Instance().AddClient(conn.get());
+		conn->setMessageCallback(std::bind(&NetManager::SolveData, Singleton<NetManager>::Instance(),
+			std::placeholders::_1, std::placeholders::_2));
 	}
 	else
 	{
@@ -77,7 +82,7 @@ void IMServer::OnConnection(std::shared_ptr<TcpConnection> conn)
 
 void IMServer::OnClose(const std::shared_ptr<TcpConnection>& conn)
 {
-	//TODO 为空 可能是当连接断开是不马上进行Session的释放 等待重新连接时再使用
+	//YODO 为空 可能是当连接断开是不马上进行Session的释放 等待重新连接时再使用
 	//这里如果不实现断线重连 则直接删除关联的RoomSession
 
 	//思考断线重连的做法：Session会保存玩家在服务器的状态，进行游戏后即使断开连接，这个状态也会保持一段时间
